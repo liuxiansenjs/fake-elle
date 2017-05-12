@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ellehome">
+<head>
+	<meta charset="UTF-8">
+	<title>Ellllla</title>
+	<link rel="stylesheet" href="../css/base.css">
+	<style>
+		*, *:before, *:after {
+			box-sizing: border-box;
+		}
+
+		.content {
+			width: 1000px;
+			margin: 0 auto;
+		}
+
+		.seo {
+			display: none;
+		}
+	</style>
+	<script src="../js/angular.min.js"></script>
+	<script>
+		var ellehomeModule = angular.module('ellehome', []);
+	</script>
+</head>
+<body>
+	<h1 class="seo"><a href="http://www.ellechina.com/">ellechina</a></h1>
+	<%- include("./header.ejs") %>
+	<%- include("./nav.ejs") %>
+    <%- include("./main_body.ejs") %>
+    <%- include("./foot.ejs") %>
+</body>
+</html>

@@ -1,0 +1,28 @@
+@charset "utf-8";
+/*base css*/
+blockquote,body,button,code,dd,div,dl,dt,fieldset,form,h1,h2,h3,h4,h5,h6,input,lengend,li,ol,p,pre,select,td,textarea,th,ul{margin:0;padding:0}
+body,div,fieldset,form,h1,h2,h3,h4,h5,h6,html,p{-webkit-text-size-adjust:none}
+table{border-collapse:collapse;border-spacing:0}
+img{border:0 none;vertical-align:top}
+li{list-style-type:none}
+caption,th{text-align:left}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:400}
+body,button,input,select,textarea{font:12px/1.5 tahoma,arial,\5b8b\4f53,sans-serif}
+button{cursor:pointer}
+cite,em{font-style:normal}
+body{line-height:1.17;-webkit-text-size-adjust:none;-webkit-touch-callout:none;/*-webkit-user-select:none;*/  font-family: 'Microsoft Yahei','微软雅黑','Verdana';}
+a{color:#000;text-decoration:none}
+a:link{text-decoration:none}
+a:hover{text-decoration:none}
+:focus{outline:0}
+.clearfixed:after{content:".";clear:both;display:block;height:0;overflow:hidden}
+.clearfixed{zoom:1;display:block}
+/*::-webkit-scrollbar{width:0;height:0}*/
+::-ms-clear{display:none}
+::-ms-reveal{display:none}
+input::-webkit-input-placeholder{color:#999}
+.none{display:none!important}
+html{-webkit-tap-highlight-color:transparent}
+.fl{float:left;}
+.fr{float:right;}
+.top-kv li.kv_type_ad img{width:auto;height:auto;}

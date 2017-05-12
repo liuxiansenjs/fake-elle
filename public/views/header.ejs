@@ -1,0 +1,233 @@
+<style>
+	.header {
+		width: 100%;
+		background-image: url('../imgs/1492480842441.jpg');
+		background-repeat: no-repeat;
+		background-position: center top;
+	}
+
+	.header .header-content {
+		height: 200px;
+		padding: 17.5px 0 17.5px 0;
+	}
+ 
+	.header .header-content img {
+		height: 165px;
+	}
+
+	.header-inner {
+		height: 41px;
+		border-bottom: 1px solid #000;
+	}
+
+	.header-inner ul li {
+		line-height: 41px;
+	}
+
+	.header-inner .arrow a {
+		padding-left: 16px;
+		background-position: 0px 3px;
+		font-family: 'Microsoft Yahei','微软雅黑','Verdana';
+		font-size: 12px;
+		color: #000;
+		margin-right: 10px;
+		background-image: url(../imgs/sprit.png);
+		background-repeat: no-repeat;
+	}
+
+
+	.header-inner .search{
+		width: 190px;
+		padding-left: 14px;
+		border: none;
+		border-left: 1px #000 solid;
+		height: 41px;
+		line-height: 41px;
+		font-family: 'Microsoft Yahei','微软雅黑','Verdana';
+		font-size: 14px;
+		color: #999;
+		border-bottom: 1px solid #000;
+	}
+
+
+	.header-inner .btn-search {
+	    position: absolute;
+	    top: 0;
+	    right: 0;
+	    width: 41px;
+	    height: 32px;
+	    display: block;
+	    background: url('../imgs/sprit.png') no-repeat;
+	    background-position: 13px -317px;
+	}
+
+	.header-inner .followe {
+	    position: relative;
+	    z-index: 300;
+	}
+
+	.header-inner .followe .follow {
+	    position: relative;
+	    display: block;
+	    width: 168px;
+	    height: 41px;
+	    background: url('../imgs/user.jpg') no-repeat;
+	    z-index: 1000;
+	    border-bottom: 1px solid #000;
+	}
+
+	.header-inner .followe span {
+	    position: absolute;
+	    top: 0px;
+	    left: 0;
+	    display: block;
+	    width: 168px;
+	    height: 38px;
+	    z-index: 200;
+	    padding-top: 1px;
+	    transition: top 0.5s;
+	}
+
+	.header-inner .followe span.active {
+		top: 41px !important;
+	}
+
+
+	.header-inner .followe .wechat {
+	    background-position: 0 0;
+	    position: relative;
+	}
+
+	.header-inner .followe span a {
+	    display: block;
+	    float: left;
+	    width: 56px;
+	    height: 37px;
+	    background: url('../imgs/red-icon.jpg') no-repeat;
+	    z-index: 300;
+	}
+
+	.header-inner .followe .wechat i {
+	    position: absolute;
+	    top: 37px;
+	    display: none;
+	    width: 144px;
+	    height: 144px;
+	    background: url('../imgs/em10.png') no-repeat;
+	    z-index: 500;
+
+
+	}
+	.header-inner .followe .wechat i.active {
+		display: block !important;
+	}
+
+	.header-inner .followe .weibo {
+	    background-position: -56px 0;
+	}
+
+	.header-inner .followe .qzone {
+	    background-position: -112px 0;
+	}
+
+	.header-inner .loginbar {
+	    padding: 0 20px 0 15px;
+	    font-family: 'Microsoft Yahei','微软雅黑','Verdana';
+	    font-size: 12px;
+	    color: #000;
+	}
+
+	.header-inner .loginbar .signin {
+	    background-position: 0px -227px;
+	}
+	.header-inner .loginbar a {
+	    padding-left: 27px;
+	    height: 41px;
+	    line-height: 41px;
+	    background-position: 0px -54px;
+	}
+
+
+	.header-inner .loginbar a, .header-inner .loginbar .linear {
+	    display: block;
+	    float: right;
+	}
+
+	.header-inner .loginbar a, .header-inner .loginbar .linear {
+	    background: url('../imgs/sprit.png') no-repeat;
+	    color: #000;
+	}
+
+	.header-inner .loginbar .linear {
+	    display: block;
+	    padding: 0;
+	    width: 1px;
+	    height: 41px;
+	    margin: 0 10px;
+	    background-position: -1px -682px;
+	    line-height: 41px;
+	}
+
+	.header-inner .loginbar a {
+	    padding-left: 27px;
+	    height: 41px;
+	    line-height: 41px;
+	    background-position: 0px -54px;
+}
+</style>
+<div class="header">
+	<div class="header-content content">
+		<img src="../imgs/logo_black.png" alt="">
+	</div>
+</div>
+<div class="header-inner" ng-controller="headerController">
+	<div class="content">
+		<ul class="clearfixed">
+			<li class="arrow fl">
+				<a href="javascript:;" target="_blank">杂志订阅</a>
+				<a href="javascript:;" target="_blank">ELLE信用卡</a>
+			</li>
+			<li class="fr">
+				<form action="http://www.ellechina.com/search.html?q=" target="_blank" method="GET" style="position: relative;">
+					<input type="text" class="search" name="wd" placeholder="">
+					<a type="submit" class="btn-search" href="javascript: ;"><button type="submit" style="width: inherit; height: inherit; padding: 0; margin: 0; opacity: 0"></button></a>
+				</form>
+			</li>
+			<li class="followe fr" ng-mouseenter="activeFollow()" ng-mouseleave="deactiveFollow()">
+				<a class="follow" href="javascript: ;"></a>
+				<span style="top: 0px;" ng-class="{active: isActiveFollow}" ng-mouseleave="deactiveWechat()">
+					<a class="wechat" href="javascript:;" ng-mouseenter="activeWechat()"><i ng-class="{active: isActiveWechat}"></i></a>
+					<a class="weibo" href="http://weibo.com/ellechina" target="_blank"></a>
+					<a class="qzone" href="http://user.qzone.qq.com/622007098" target="_blank"></a></span>
+				</li>
+				<li class="loginbar fr" style="display:block;">
+					<a href="javascript: ;" class="signin">登录Sign in</a>
+					<i class="linear"></i>
+					<a href="javascript: ;" class="register">注册Register</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<script>
+		ellehomeModule.controller('headerController', ['$scope', function($scope) {
+			$scope.words = 'words';
+			$scope.isActiveFollow = false;
+			$scope.isActiveWechat = false;
+			$scope.activeFollow = function(e) {
+				$scope.isActiveFollow = true;
+				return;
+			}
+			$scope.activeWechat = function(e) {
+				$scope.isActiveWechat = true;
+				return;
+			}
+			$scope.deactiveFollow = function(e) {
+				$scope.isActiveFollow = false;
+				return;
+			}
+			$scope.deactiveWechat = function(e) {
+				$scope.isActiveWechat = false;
+				return;
+			}
+		}])
+	</script>

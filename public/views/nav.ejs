@@ -1,0 +1,302 @@
+<style>
+	.nav {
+		height: 43px;
+		border-bottom: 5px solid #000;
+		position: relative;
+	}
+
+	.nav .menubar li {
+		float: left;
+		text-align: center;
+	}
+
+	.nav .menubar li a {
+	    display: block;
+	    font-family: 'Microsoft Yahei','微软雅黑','Verdana';
+	    font-size: 16px;
+	    color: #000;
+	    line-height: 38px;
+	    width: 50px;
+	    text-decoration: none;
+	    padding: 0 8px;
+	}
+
+	.nav .menubar li a.active, .nav .menubar li a:hover{
+		background: #f00;
+		color: #fff;
+	}
+
+	.nav .menubar li a.first {
+		width: 46px !important;
+		padding: 0 6px !important;
+	}
+	.nav .menubar li a.ellefit {
+		width: 64px !important;
+		padding: 0 6px !important;
+	}
+	.nav .menubar li a.last {
+		width: 89px !important;
+		padding: 0 5px !important;
+	}
+
+	.nav .submenu {
+		position: absolute;
+		height: 339px;
+		top: 43px;
+		left: 0;
+		border: 1px solid #000;
+		border-top: none;
+		display: none;
+        background: #fff;
+	}
+
+	.nav .submenu .submenu-drop {
+		padding-top: 3px;
+	}
+
+	.nav .submenu.active {
+		display: block;
+	}
+
+	.nav .submenu .left-column {
+		width: 210px;
+		height: 335px;
+		padding: 24px 20px;
+	}
+
+	.nav .submenu .left-column ul li {
+		width: 170px;
+		height: 32px;
+	}
+
+	.nav .submenu .left-column ul li a {
+		line-height: 32px;
+		font-size: 14px;
+	}
+
+	.nav .submenu .right-column {
+		width: 788px;
+		border-left: 1px solid #cdcdcd;
+	}
+
+	.nav .submenu .right-column .top {
+		width: 787px;
+		padding: 30px 30px 16px 30px;
+	}
+
+	.nav .submenu .right-column .top li {
+		width: 210px;
+		float: left;
+	}
+
+	.nav .submenu .right-column .top .margin-44 {
+		margin: 0 44px;
+	}
+
+	.nav .submenu .right-column .top li a img {
+		width: 210px;
+		height: 140px;
+		overflow: hidden;
+	}
+
+	.nav .submenu .right-column .top li a p {
+		width: 210px;
+		height: 64px;
+		overflow: hidden;
+		font-family: 'Microsoft Yahei','微软雅黑','Verdana';
+		font-size: 16px;
+		color: #000;
+		line-height: 24px;
+		text-align: center;
+		padding: 16px 9px 0px 9px;
+		font-weight: bold;
+	}
+
+	.nav .submenu .right-column .bottom {
+		padding: 12px 38px;
+		width: 787px;
+		height: 84px;
+	}
+
+	.nav .submenu .right-column .bottom .bottom-item {
+		background: url(../imgs/dott.jpg) no-repeat left center;
+		width: 50%;
+		height: 30px;
+		float: left;
+
+	}
+
+	.nav .submenu .right-column .bottom .bottom-item a {
+		font-family: 'Microsoft Yahei','微软雅黑','Verdana';
+		font-size: 14px;
+		color: #333;
+		line-height: 30px;
+		padding-left: 13px;
+	}
+
+
+</style>
+
+<div class="nav content" ng-controller="navController">
+	<ul class="clearfixed menubar">
+		<li>
+			<a class="first active" href="javascript: ;">首页</a>
+		</li>
+		<li ng-mouseenter="activate()" ng-mouseleave="deactivate()">
+			<a href="javascript: ;">时装</a>
+		</li>
+		<li>
+			<a href="javascript: ;">奢华</a>
+		</li>
+		<li>
+			<a href="javascript: ;">美容</a>
+		</li>
+		<li>
+			<a href="javascript: ;">美装</a>
+		</li>
+		<li>
+			<a href="javascript: ;">美发</a>
+		</li>
+		<li>
+			<a href="javascript: ;">明星</a>
+		</li>
+		<li>
+			<a href="javascript: ;">珠宝</a>
+		</li>
+		<li>
+			<a href="javascript: ;">腕表</a>
+		</li>
+		<li>
+			<a href="javascript: ;">生活</a>
+		</li>
+		<li>
+			<a href="javascript: ;">新娘</a>
+		</li>
+		<li>
+			<a href="javascript: ;">专题</a>
+		</li>
+		<li>
+			<a href="javascript: ;">男士</a>
+		</li>
+		<li>
+			<a href="javascript: ;">家居</a>
+		</li>
+		<li>
+			<a href="javascript: ;">品牌</a>
+		</li>
+		<li>
+			<a href="javascript: ;">论坛</a>
+		</li>
+		<li>
+			<a href="javascript: ;">博客</a>
+		</li>
+		<li>
+			<a class="ellefit" href="javascript: ;">ELLEfit</a>
+		</li>
+		<li>
+			<a class="last" href="javascript: ;">SuperELLE</a>
+		</li>
+	</ul>
+	<div class="submenu content" ng-class="{active: isActive}" ng-mouseenter="activate()" ng-mouseleave="deactivate()">
+		<div class="submenu-drop clearfixed">
+			<div class="left-column fl clearfixed">
+				<ul>
+					<li>
+						<a href="javascript: ;">星衣Q</a>
+					</li>
+					<li>
+						<a href="javascript: ;">穿搭</a>
+					</li>
+					<li>
+						<a href="javascript: ;">长草</a>
+					</li>
+					<li>
+						<a href="javascript: ;">前沿</a>
+					</li>
+					<li>
+						<a href="javascript: ;">街拍</a>
+					</li>
+					<li>
+						<a href="javascript: ;">新鲜事</a>
+					</li>
+					<li>
+						<a href="javascript: ;">时装周</a>
+					</li>
+				</ul>
+			</div>
+			<div class="right-column fr clearfixed">
+				<div class="top clearfixed">
+					<ul class="clearfixed">
+						<li>
+							<a href="javascript: ;">
+								<img src="../imgs/1491813304944.jpg" alt="">
+								<p>高圆圆的白T越穿越美</p>
+							</a>
+						</li>
+						<li class="margin-44">
+							<a href="javascript: ;">
+								<img src="../imgs/1491970314353.jpg" alt="">
+								<p>ins上的酷女孩教我的事</p>
+							</a>
+						</li>
+						<li>
+							<a href="javascript: ;">
+								<img src="../imgs/1491879508696.jpg" alt="">
+								<p>流苏毛边牛仔裤好拉风</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="bottom clearfixed">
+					<div class="bottom-item">
+						<a href="javascript: ;">今年流行穿"花"裙子！</a>
+					</div>
+					<div class="bottom-item">
+						<a href="javascript: ;">小黑鞋打造春日时髦！</a>
+					</div>
+					<div class="bottom-item">
+						<a href="javascript: ;">斜肩穿衣明星们爱着呢！</a>
+					</div>
+					<div class="bottom-item">
+						<a href="javascript: ;">把衬衫当外套穿刚刚好！</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	ellehomeModule.controller('navController', ['$scope', '$timeout', function($scope, $timeout){
+		$scope.isActive = false;
+		$scope.deactivateTimmer = null;
+
+		$scope.submenuDatas = [{
+				lefts: ['星衣Q', '穿搭', '长草', '前沿', '街拍', '新鲜事', '时装周'],
+				rights: [{
+					src: '../imgs/1491813304944.jpg',
+					p: '高圆圆的白T越穿越美'
+				}, {
+					src: '../imgs/1491970314353.jpg',
+					p: 'ins上的酷女孩教我的事'
+				}, {
+					src: '../imgs/1491879508696.jpg',
+					p: '流苏毛边牛仔裤好拉风'
+				}],
+				bottoms: {
+					p: ['今年流行穿"花"裙子！', '小黑鞋打造春日时髦！', '斜肩穿衣明星们爱着呢！', '把衬衫当外套穿刚刚好！']
+				}
+		}];
+
+		$scope.activate = function(e) {
+			$timeout.cancel($scope.deactivateTimmer);
+			$scope.isActive = true;
+		}
+		$scope.deactivate = function(e) {
+			$scope.deactivateTimmer = $timeout(function() {
+				$scope.isActive = false;
+			}, 100);
+		}
+	}])
+
+</script>
